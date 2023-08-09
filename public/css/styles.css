@@ -9,11 +9,31 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 header{
-background-color:var(--amarillo);
-font-size: 12px;
-line-height: 20px;
+    background-color:var(--amarillo);
+    font-size: 12px;
+    line-height: 20px;
+}
+.header_CompraCuota{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.header_logo{
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+}
+.img_logo{
+    flex-grow: 0.50;
+}
+.header_buscador{
+    flex-grow: 0.50;
+    border-radius: 25%;
 }
 .header_Items li a{
     color: black;
@@ -23,16 +43,19 @@ line-height: 20px;
     background-image: url("../img/img-home-banner.jpg");
     background-position: center;
     background-size: cover;
-    height: 100px;
+    height: 150px;
 }
-body{
+main{
     font-family: 'Roboto', sans-serif;
     font-size: 12px;
     background-color: var(--gris_claro);
 }
 .seccion_Main{
-    background-color: white;
-    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    border: 1px dashed red;
+    width: 90vw;
+    margin-left: 5%;
     align-items: center;
     text-align: center;
 }
@@ -40,11 +63,39 @@ body{
     font-size: 24px;
     line-height: 32px;
 }
+.articulos{
+    display: flex;
+    flex-direction: row;
+}
+.main_Article{
+    width: 200px;
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.article_Image{
+    height: 70%;
+    width: 70%;
+}
+.article_Descripcion{
+    display: flex;
+    flex-direction: column;
+    margin-inline: 15px;
+    border-top: 1px solid #ebebeb;
+}
+.article_Precio{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 .main_Precios{
+    flex-grow: 0.30;
     font-size: 18px;
     line-height: 26px;
 }
 .main_Descuentos{
+    display: flex;
+    flex-grow: 0.70;
     font-size: 16px;
     line-height: 24px;
 }
@@ -52,8 +103,71 @@ body{
     font-size: 16px;
     line-height: 24px;
 }
+@media (max-width: 425px){
+    .main_Descripcion{
+        display: none;
+    }
+    .article_Image{
+        height: 70%;
+        width: 70%;
+    }
+    .header_Items{
+        display: none;
+    }
+    .burger-menu{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: var(--gris_claro);   
+    }
+    .fas{
+        background-size:cover ;
+        background-color: var(--celeste);
+        border-radius: 15%;
+        padding: 5px;
+    }
+    .articulos{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-
+}
+@media (max-width: 769px){
+    .articulos{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center; 
+    }
+    .header_logo{
+        display: flex;
+        flex-direction: row;
+    
+        justify-content: center;
+    }
+    .img_logo{
+        flex-grow: 0.50;
+    }
+    .header_buscador{
+        flex-grow: 0.50;
+        border-radius: 25%;
+    }
+}
+/*@media (min-width: 361px) {
+    .burger-menu{
+        display: none;
+    }
+    .main_Descripcion{
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+    .main_Article
+    {
+        width: 250px;
+    }
+}*/
 
 footer{
     display: flex;
@@ -74,3 +188,66 @@ footer{
     line-height: 20px;
     margin: 20px;
 }
+
+/*estilo de el registro*/
+.main_register{
+    display: flex;
+    justify-content: center;
+}
+.registro-formulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 500px;
+    background-color: var(--gris_claro);
+    padding: 20px;
+}
+.perfildeUsuario{
+    display: flex;
+    flex-direction: row;
+}
+.intereses{
+    display: flex;
+    flex-direction: row;
+}
+.registro-formulario input{
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px 0px;
+}
+.boton{
+    background-color: var(--celeste);
+    color: var(--gris_claro);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+/*Estilo del login*/
+
+.main-log{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: center;
+}
+.main-log input{
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0px;
+}
+.botonLog{
+    align-self: center;
+    background-color: var(--celeste);
+    color: var(--gris_claro);
+    border: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
